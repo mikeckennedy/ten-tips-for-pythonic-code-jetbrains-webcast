@@ -20,10 +20,11 @@ def get_files(folder):
         if os.path.isfile(full_item):
             yield full_item
         elif os.path.isdir(full_item):
-            # NOW WHAT?
-            pass
-            # TODO: old skool style loop
-            # TODO: new recursive yield style
+            # old skool style loop
+            # for f in get_files(full_item):
+            #     yield f
+            # new recursive yield style
+            yield from get_files(full_item)
 
 
 if __name__ == '__main__':

@@ -31,6 +31,13 @@ class ImmutableThing:
         self.c = c
         self.d = d
 
+    @property
+    def the_a(self):
+        return self.a
+
+# i = ImmutableThing(1,1,1,1)
+# i.z = 2
+
 print("Uncomment just 1 of these 4 loops below")
 print("after the program pauses on input, check the process memory")
 
@@ -41,24 +48,24 @@ data = []
 t0 = datetime.datetime.now()
 
 # Loop 1: Tuples
-print("tuple")
-for n in range(count):
-    data.append((1 + n, 2 + n, 3 + n, 4 + n))
+# print("tuple")
+# for n in range(count):
+#     data.append((1 + n, 2 + n, 3 + n, 4 + n))
 
 # # Loop 2: Named tuple
 # print("named tuple")
 # for n in range(count):
 #     data.append(ImmutableThingTuple(1 + n, 2 + n, 3 + n, 4 + n))
-#
+
 # # Loop 3: Standard mutable class
 # print("standard class")
 # for n in range(count):
 #     data.append(MutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 #
 # Loop 4: Slot based immutable class
-# print("slot based class")
-# for n in range(count):
-#     data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
+print("slot based class")
+for n in range(count):
+    data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 
 t1 = datetime.datetime.now()
 

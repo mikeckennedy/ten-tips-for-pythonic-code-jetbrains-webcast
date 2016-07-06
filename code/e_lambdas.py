@@ -8,11 +8,11 @@
 
 def main():
     print("Find odd numbers via method:")
-    # TODO
+    print(find_special_numbers(check_for_odd))
     print()
 
     print("Find divisible by 6 via lambda:")
-    # TODO
+    print(find_special_numbers(lambda x: x % 6 == 0))
     print()
 
     print("Sorted list of words via lambda: ")
@@ -20,7 +20,7 @@ def main():
                      'user-facing', 'of', 'other', 'for', 'smaller', 'deprecations,', 'a', 'optimizations,', 'changes,',
                      'including', 'and', 'Please', 'many', 'list']
 
-    # TODO
+    list_of_words.sort(key=lambda w: w.lower())
     print(list_of_words)
 
     print("Done")

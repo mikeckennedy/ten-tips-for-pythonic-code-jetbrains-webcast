@@ -26,7 +26,7 @@ db_file = os.path.join(
     'slicing_db.sqlite')
 
 conn_str = 'sqlite:///' + db_file
-engine = sqlalchemy.create_engine(conn_str, echo=False)
+engine = sqlalchemy.create_engine(conn_str, echo=True)
 session_factory = sqlalchemy.orm.sessionmaker(bind=engine)
 SqlAlchemyBase.metadata.create_all(engine)
 

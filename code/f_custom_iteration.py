@@ -5,8 +5,12 @@ class ShoppingCart:
     def add_item(self, it):
         self.items.append(it)
 
-    # TODO: 1. Reveal items directly
-    # TODO: 2. Sorted or otherwise modified
+    # def __iter__(self):
+    #     return self.items.__iter__()
+
+    def __iter__(self):
+        for i in sorted(self.items, key=lambda x: -x.price):
+            yield i
 
 
 class CartItem:
@@ -20,4 +24,5 @@ cart.add_item(CartItem("guitar", 799))
 cart.add_item(CartItem("cd", 19))
 cart.add_item(CartItem("iPhone", 699))
 
-# TODO: Iterate cart
+for item in cart:
+    print(" * ${} {}".format(item.price, item.name))

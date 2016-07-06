@@ -67,8 +67,10 @@ def main():
     print(interesting_points)
 
     # #############################
+    t0 = datetime.datetime.now()
+
     print("Creating dictionary...", end='')
-    # TODO: Create dictionary lookup by ID
+    data_lookup = {d.id: d for d in data_list}
 
     print("done.")
     sys.stdout.flush()
@@ -76,11 +78,11 @@ def main():
     print("Locating data in dictionary...", end=' ')
     sys.stdout.flush()
 
-    t0 = datetime.datetime.now()
+    #    t0 = datetime.datetime.now()
     interesting_points = []
     for i in interesting_ids:
-        pass
-        # use data_lookup to find by id, add to interesting_points
+        item = data_lookup[i]
+        interesting_points.append(item)
 
     t1 = datetime.datetime.now()
     dt_dict = (t1 - t0).total_seconds()
@@ -88,10 +90,10 @@ def main():
     print("done.")
     sys.stdout.flush()
 
-    # print("DT: {} sec".format(dt_dict))
-    # print(interesting_points)
-    # print()
-    # print("Speedup from dict: {:,.0f}x".format(round(dt_list / dt_dict)))
+    print("DT: {} sec".format(dt_dict))
+    print(interesting_points)
+    print()
+    print("Speedup from dict: {:,.0f}x".format(round(dt_list / dt_dict)))
 
 
 def find_point_by_id_in_list(data_list, i):

@@ -19,16 +19,23 @@ print("post:  {}".format(post))
 
 # Non-pythonic procedural way (item by item)
 m1 = {}
+for k in query:
+    m1[k] = query[k]
+for k in route:
+    m1[k] = route[k]
+for k in post:
+    m1[k] = post[k]
 
 # Classic pythonic way (copy & update):
-m2 = None
+m2 = query.copy()
+m2.update(route)
+m2.update(post)
 
 # Via dictionary comprehensions {k:v for in dict list for k, v d.items()}
-m3 = None
+m3 = {k: v for d in [query, route, post] for k, v in d.items()}
 
 # Python 3.5+ pythonic way, warning crashes on Python <= 3.4:
-m4 = None
-
+m4 = {**query, **route, **post}  # python 3.5+
 
 print(m1)
 print(m2)

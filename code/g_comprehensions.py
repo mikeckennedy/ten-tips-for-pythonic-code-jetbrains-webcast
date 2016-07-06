@@ -16,28 +16,34 @@ measurements = [
 ]
 
 # C-style
-high_measurements1 = [] # all with value over 70
-# TODO
+high_measurements1 = []  # all with value over 70
+for m in measurements:
+    if m.value > 70:
+        high_measurements1.append(m.value)
 
 # list comprehension
-# TODO
-high_measurements2 = []
+high_measurements2 = [
+    m.value
+    for m in measurements
+    if m.value > 70
+    ]
 
 # generator expression
-# TODO
-
+high_measurements_gen = (
+    m.value
+    for m in measurements
+    if m.value > 70
+)
+print(high_measurements_gen)
 
 # process the generator to get something printable.
-# TODO
-high_measurements3 = list()
+high_measurements3 = list(high_measurements_gen)
 
 # dict comprehension
-# TODO
-high_m_by_id = {}
+high_m_by_id = {m.id: m.value for m in measurements if m.value > 70}
 
 # set comprehension
-# TODO
-high_values_distinct = set()
+high_values_distinct = {m.value for m in measurements if m.value > 70}
 
 print(high_measurements1)
 print(high_measurements2)
