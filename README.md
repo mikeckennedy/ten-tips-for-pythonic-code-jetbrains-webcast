@@ -4,7 +4,7 @@ This is the accompanying code for my webcast presented by JetBrains and the PyCh
 
 ## Watch the webcast recording
 
-[![Watch the webcast recording](reademe_resources/webcast-player.png)](https://blog.jetbrains.com/pycharm/2016/07/webinar-recording-10-tips-for-pythonic-code/)
+[![Watch the webcast recording](reademe_resources/webcast-player.png)](https://youtu.be/_O23jIXsshs)
 
 ## Webcast summary
 
